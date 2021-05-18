@@ -1,10 +1,14 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import '../styles/globals.css'
+import 'focus-visible/dist/focus-visible';
+import Layout from 'components/Layout';
+import theme from 'styles/theme';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
+    <ChakraProvider theme={theme}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
   )
 }
