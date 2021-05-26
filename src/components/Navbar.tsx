@@ -1,7 +1,9 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { Flex, Link, Image, Tooltip, Divider } from '@chakra-ui/react';
+import { Flex, Link, Image, Divider } from '@chakra-ui/react';
 import { createIcon } from '@chakra-ui/icons';
+
+import NavbarLink from 'components/NavbarLink';
 
 const MovieIcon = createIcon({
   displayName: 'MovieIcon',
@@ -32,20 +34,8 @@ const Navbar = () => {
           </Link>
         </NextLink>
         <Divider orientation="vertical" w={1} h="20px" ml={4} borderColor="gray.300" />
-        <NextLink href="/movies" passHref>
-          <Link px={4}>
-            <Tooltip label="Movies">
-              <MovieIcon w={6} h={6} color="inactive" />
-            </Tooltip>
-          </Link>
-        </NextLink>
-        <NextLink href="/series" passHref>
-          <Link px={4}>
-            <Tooltip label="TV Shows">
-              <SeriesIcon w={6} h={6} color="inactive" />
-            </Tooltip>
-          </Link>
-        </NextLink>
+        <NavbarLink href="/movies" text="Movies" Icon={MovieIcon} />
+        <NavbarLink href="/series" text="TV & Series" Icon={SeriesIcon} />
       </Flex>
     </Flex>
   );
