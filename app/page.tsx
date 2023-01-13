@@ -1,10 +1,8 @@
-import fetcher from "@/utils/fetch";
 import NowPlaying from "@/components/NowPlaying";
+import getMovies from "@/services/movies";
 
 async function getNowPlayingMovies() {
-  const nowPlayingMovies = await fetcher("/api/movie", {
-    next: { revalidate: 60 * 60 * 24 },
-  });
+  const nowPlayingMovies = await getMovies();
 
   return nowPlayingMovies;
 }
