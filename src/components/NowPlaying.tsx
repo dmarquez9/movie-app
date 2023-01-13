@@ -40,7 +40,7 @@ const NowPlaying = ({ items }: { items: Movie[] }) => {
               key={item.id}
             >
               <Image
-                src={"https://image.tmdb.org/t/p/original" + item.poster_path}
+                src={"https://image.tmdb.org/t/p/w500" + item.poster_path}
                 alt={item.original_title}
                 fill
                 className="object-cover"
