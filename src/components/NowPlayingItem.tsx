@@ -3,7 +3,7 @@ import Image from "next/image";
 import cx from "classnames";
 import { Movie } from "@/types/movies";
 
-import { Poppins } from "@next/font/google";
+import { Poppins } from "next/font/google";
 
 import Container from "./Container";
 
