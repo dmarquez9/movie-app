@@ -12,8 +12,8 @@ const Navbar: React.FC = () => {
           <Image src="/logo.svg" alt="Movie app logo" width={80} height={40} />
         </Link>
         <div className="flex items-center gap-4">
-          <NavItem href="/movies">Movies</NavItem>
-          <NavItem href="/tv-series">TV Series</NavItem>
+          <NavItem href="/">Movies</NavItem>
+          <NavItem href="/">TV Series</NavItem>
         </div>
       </Container>
     </nav>

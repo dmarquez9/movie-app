@@ -5,7 +5,7 @@ import { Movie } from "@/types/movies";
 
 import { Poppins } from "next/font/google";
 
-import Container from "./Container";
+import Container from "../Container";
 
 const poppins = Poppins({ weight: ["700"], subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ const NowPlayingItem = ({ item }: { item: Movie }) => {
         src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
         alt={item.original_title}
         fill
-        className="object-cover object-top"
+        className="object-cover object-center"
       />
       <div className="absolute w-full h-full left-0 top-0 bg-gradient-to-t from-black to-transparent pb-20 flex items-end z-10">
         <Container className="text-left text-white">

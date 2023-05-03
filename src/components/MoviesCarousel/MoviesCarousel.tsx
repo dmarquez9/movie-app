@@ -3,14 +3,13 @@ import * as React from "react";
 import Image from "next/image";
 import cx from "classnames";
 import { Carousel } from "react-responsive-carousel";
+
 import { Movie } from "@/types/movies";
+import Container from "@/components/Container";
 
-import Container from "./Container";
-import NowPlayingItem from "./NowPlayingItem";
+import MoviesCarouselItem from "./MoviesCarouselItem";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-const NowPlaying = ({ items }: { items: Movie[] }) => {
+const MoviesCarousel = ({ items }: { items: Movie[] }) => {
   const [currentSlide, setCurrentSlide] = React.useState<number>(0);
 
   return (
@@ -25,7 +24,7 @@ const NowPlaying = ({ items }: { items: Movie[] }) => {
         autoPlay
       >
         {items?.map((item) => (
-          <NowPlayingItem key={item.id} item={item} />
+          <MoviesCarouselItem key={item.id} item={item} />
         ))}
       </Carousel>
       <div className="bg-black py-16">
@@ -53,4 +52,4 @@ const NowPlaying = ({ items }: { items: Movie[] }) => {
   );
 };
 
-export default NowPlaying;
+export default MoviesCarousel;

@@ -1,9 +1,10 @@
 "use client";
+import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type NavItemProps = {
-  href: string;
+  href: Route<string> | URL;
   children: React.ReactNode;
 };
 

@@ -1,12 +1,13 @@
 import Navbar from "@/components/Navbar";
 import { Inter } from "next/font/google";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./globals.css";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
-
-import "./globals.css";
 
 export default function RootLayout({
   children,
