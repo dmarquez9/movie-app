@@ -76,7 +76,9 @@ function CircularProgressBar({ value }: CircularProgressBarProps) {
         />
       </svg>
       <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-        <div className="text-2xl font-bold">{value.toFixed(1)}</div>
+        <div className="text-2xl font-bold font-poppins">
+          {value.toFixed(1)}
+        </div>
       </div>
     </div>
   )
