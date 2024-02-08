@@ -1,8 +1,8 @@
 import request from "@/utils/request";
 
-import type { MovieApiResponse, Movie } from "@/types/movies";
+import { MovieApiResponse, Movie } from "@/types/movies";
 import { MovieDetailResponse } from "@/types/movie-detail";
-import { mapMovieDetailResponse } from "@/transform/movies";
+import { mapMovieDetailResponse, mapMovieResults } from "@/transform/movies";
 
 enum MovieListType {
   NowPlaying = "now_playing",
@@ -26,7 +26,7 @@ export async function getMovies(
         ? response.results.slice(0, 5)
         : response.results;
 
-    return results;
+    return results.map(mapMovieResults);
   } catch (error) {
     throw new Error(`Failed to fetch data on getMovies ${type}`);
   }

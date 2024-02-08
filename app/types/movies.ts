@@ -2,11 +2,21 @@ import { Genre } from "./movie-detail";
 
 export type Movie = {
   id: string;
+  poster: string | null;
+  overview: string;
+  releaseDate: string;
+  title: string;
+  backdropPath: string;
+  rating: number;
+};
+
+export type MovieResults = {
+  id: string;
   poster_path: string | null;
   adult: boolean;
   overview: string;
   release_date: string;
-  genre_ids: Array<number | Genre>;
+  genre_ids: number;
   original_title: string;
   original_language: string;
   title: string;
@@ -19,7 +29,7 @@ export type Movie = {
 
 export type MovieApiResponse = {
   page: number;
-  results: Movie[];
+  results: MovieResults[];
   dates?: {
     maximum: string;
     minimum: string;

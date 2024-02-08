@@ -1,4 +1,7 @@
+import MovieHero from "@/components/MovieHero";
 import { getMovies, getMovieDetails } from "@/services/movies";
+
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const movies = await getMovies();
@@ -16,5 +19,5 @@ type MoviePageProps = {
 
 export default async function MoviePage({ params }: MoviePageProps) {
   const movie = await getMovieDetails(params.slug);
-  return <div>{movie.title}</div>;
+  return <MovieHero {...movie} />;
 }

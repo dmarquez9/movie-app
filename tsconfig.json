@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./app",
     "paths": {
-      "@/types/*": ["src/types/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/components/*": ["src/components/*"],
-      "@/services/*": ["src/services/*"],
-      "@/transform/*": ["src/transform/*"]
+      "@/types/*": ["/types/*"],
+      "@/utils/*": ["/utils/*"],
+      "@/components/*": ["/components/*"],
+      "@/services/*": ["/services/*"],
+      "@/transform/*": ["/transform/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

@@ -1,16 +1,16 @@
-"use client";
-import * as React from "react";
-import Image from "next/image";
-import cx from "classnames";
-import { Carousel } from "react-responsive-carousel";
+'use client'
+import * as React from 'react'
+import Image from 'next/image'
+import cx from 'classnames'
+import { Carousel } from 'react-responsive-carousel'
 
-import { Movie } from "@/types/movies";
-import Container from "@/components/Container";
+import { Movie } from '@/types/movies'
+import Container from '@/components/Container'
 
-import MoviesCarouselItem from "./MoviesCarouselItem";
+import MoviesCarouselItem from './MoviesCarouselItem'
 
 const MoviesCarousel = ({ items }: { items: Movie[] }) => {
-  const [currentSlide, setCurrentSlide] = React.useState<number>(0);
+  const [currentSlide, setCurrentSlide] = React.useState<number>(0)
 
   return (
     <>
@@ -18,7 +18,7 @@ const MoviesCarousel = ({ items }: { items: Movie[] }) => {
         showArrows={false}
         showStatus={false}
         showThumbs={false}
-        onChange={(index) => setCurrentSlide(index)}
+        onChange={(index: number) => setCurrentSlide(index)}
         selectedItem={currentSlide}
         interval={3000}
         autoPlay
@@ -32,15 +32,15 @@ const MoviesCarousel = ({ items }: { items: Movie[] }) => {
           {items?.map((item, index) => (
             <button
               className={cx(
-                "rounded overflow-hidden flex-1 h-[300px] relative outline outline-3 outline-transparent hover:outline-white transition-all",
-                { "outline-white": currentSlide === index }
+                'rounded overflow-hidden flex-1 h-[300px] relative outline outline-3 outline-transparent hover:outline-white transition-all',
+                { 'outline-white': currentSlide === index }
               )}
               onClick={() => setCurrentSlide(index)}
               key={item.id}
             >
               <Image
-                src={"https://image.tmdb.org/t/p/w500" + item.poster_path}
-                alt={item.original_title}
+                src={'https://image.tmdb.org/t/p/w500' + item.poster}
+                alt={item.title}
                 fill
                 className="object-cover"
               />
@@ -49,7 +49,7 @@ const MoviesCarousel = ({ items }: { items: Movie[] }) => {
         </Container>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default MoviesCarousel;
+export default MoviesCarousel
